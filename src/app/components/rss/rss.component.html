@@ -1,0 +1,49 @@
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">RSS</div>
+      <div class="list-group list-group-flush">
+        <a (click)="onTecnologia()" class="list-group-item list-group-item-action bg-light">Tegnología</a>
+        <a (click)="onNoticias()" class="list-group-item list-group-item-action bg-light">Noticias</a>
+        <a (click) = "onDeportes()" class="list-group-item list-group-item-action bg-light">Deportes</a>
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+
+      <div class="container row row-cols-1 row-cols-md-3 div-card">
+          <div *ngFor="let item of rss" class="col mb-4">
+            <div class="card h-100 text-primary" >
+              <a href="{{item.link}}" target="_blank" rel="noopener noreferrer"><img src="{{item.thumbnail}}" class="card-img-top" alt="..."/></a>
+              <div class="card-body text-secondary">
+                  <h6 class="card-title text-justify">{{item.title}}</h6>
+                  <p><span>Author: {{item.author}}</span></p>
+                  <p style="text-align: right;">Date: {{item.pubDate | date:'medium'}}</p>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!rss" class="col mb-4">
+            <div class="card h-100">
+              <img src="" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!rss" class="col mb-4">
+            <div class="card h-100">
+              <img src="" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+  

@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RssComponent } from './components/rss/rss.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { RssService } from './services/rss.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RssComponent,
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RssService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
