@@ -13,7 +13,9 @@
       <div class="container row row-cols-1 row-cols-md-3 div-card">
           <div *ngFor="let item of rss" class="col mb-4">
             <div class="card h-100 text-primary" >
-              <a href="{{item.link}}" target="_blank" rel="noopener noreferrer"><img src="{{item.thumbnail}}" class="card-img-top" alt="..."/></a>
+              <!-- Para colocar una imagen como predeterminada si el objeto viene sin imagen, se utiliza el siguiente formato
+              ?objeto:'ruta' -->
+              <a href="{{item.link}}" target="_blank" rel="noopener noreferrer"><img src="{{item.thumbnail?item.thumbnail:'/assets/images/defaultImage.png'}}" class="card-img-top" alt="..."/></a>
               <div class="card-body text-secondary">
                   <h6 class="card-title text-justify">{{item.title}}</h6>
                   <p><span>Author: {{item.author}}</span></p>
