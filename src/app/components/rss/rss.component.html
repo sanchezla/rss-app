@@ -6,6 +6,9 @@
         <a (click)="onTecnologia()" class="list-group-item list-group-item-action bg-light">Tegnología</a>
         <a (click)="onNoticias()" class="list-group-item list-group-item-action bg-light">Noticias</a>
         <a (click) = "onDeportes()" class="list-group-item list-group-item-action bg-light">Deportes</a>
+        <a (click) = "onCine()" class="list-group-item list-group-item-action bg-light">Cine</a>
+        <a (click) = "onSalud()" class="list-group-item list-group-item-action bg-light">Salud</a>
+        <a (click) = "onAutomovilismo()" class="list-group-item list-group-item-action bg-light">Automovilismo</a>
       </div>
     </div>
     <div id="page-content-wrapper">
@@ -19,7 +22,7 @@
               <div class="card-body text-secondary">
                   <h6 class="card-title text-justify">{{item.title}}</h6>
                   <p><span>Author: {{item.author}}</span></p>
-                  <p style="text-align: right;">Date: {{item.pubDate | date:'medium'}}</p>
+                  <p style="text-align: right;">Date: {{item.pubDate | date:'fullDate'}}</p>
               </div>
             </div>
           </div>

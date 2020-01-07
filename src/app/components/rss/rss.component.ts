@@ -56,6 +56,48 @@ export class RssComponent implements OnInit {
     });
   }
 
+  onCine() {
+    this.rssService.getRssCine()
+    .subscribe(
+      (data) => {
+      // tslint:disable-next-line: no-string-literal
+      this.rss = data.items;
+      console.log(data);
+      console.log(this.rss);
+      },
+      (error) => {
+        console.error(error);
+    });
+  }
+
+  onSalud() {
+    this.rssService.getRssSalud()
+    .subscribe(
+      (data) => {
+      // tslint:disable-next-line: no-string-literal
+      this.rss = data.items;
+      console.log(data);
+      console.log(this.rss);
+      },
+      (error) => {
+        console.error(error);
+    });
+  }
+
+  onAutomovilismo() {
+    this.rssService.getRssAutomovilismo()
+    .subscribe(
+      (data) => {
+      // tslint:disable-next-line: no-string-literal
+      this.rss = data.items;
+      console.log(data);
+      console.log(this.rss);
+      },
+      (error) => {
+        console.error(error);
+    });
+  }
+
   onTecnologia() {
     this.rssService.getRssTecnologia()
     .subscribe(
